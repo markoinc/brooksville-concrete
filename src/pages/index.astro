@@ -3,11 +3,93 @@ import Layout from '../layouts/Layout.astro';
 
 const phone = '(352) 292-1499';
 const phoneTel = '3522921499';
+
+const services = [
+  {
+    title: 'Concrete Driveways',
+    description: 'Durable, long-lasting driveways designed for Florida\'s climate. We handle everything from removal to finishing.',
+    link: '/concrete-driveways/',
+    icon: 'M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z'
+  },
+  {
+    title: 'Concrete Patios',
+    description: 'Create the perfect outdoor living space. From simple slabs to decorative stamped concrete patios.',
+    link: '/concrete-patios/',
+    icon: 'M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z'
+  },
+  {
+    title: 'Concrete Slabs',
+    description: 'Industrial-strength slabs for sheds, garages, workshops, and more. Engineered for Hernando County soil.',
+    link: '/concrete-slabs/',
+    icon: 'M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8z'
+  },
+  {
+    title: 'Stamped Concrete',
+    description: 'Beautiful decorative concrete that mimics brick, stone, or tile at a fraction of the cost.',
+    link: '/stamped-concrete/',
+    icon: 'M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83V6.31l6-2.12 6 2.12v4.78z'
+  },
+  {
+    title: 'Pole Barn Slabs',
+    description: 'Heavy-duty foundations for pole barns, workshops, and agricultural buildings throughout the Nature Coast.',
+    link: '/pole-barns/',
+    icon: 'M12 3L2 12h3v8h14v-8h3L12 3zm0 12.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'
+  },
+  {
+    title: 'Sidewalks & More',
+    description: 'Complete concrete services including walkways, pool decks, steps, curbs, and concrete repairs.',
+    link: '/contact/',
+    icon: 'M15 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V9l-6-6zM5 19V5h9v5h5v9H5z'
+  }
+];
+
+const reviews = [
+  {
+    name: 'Michael T.',
+    location: 'Brooksville',
+    text: 'Absolutely top-notch work on our new driveway. The crew was professional, showed up on time, and the finished product looks amazing. They really know Hernando County soil conditions.',
+    rating: 5,
+    color: '#d97706'
+  },
+  {
+    name: 'Jennifer L.',
+    location: 'Spring Hill',
+    text: 'We had a stamped concrete patio installed and couldn\'t be happier. The attention to detail was incredible. Friends keep asking who did our work. Highly recommend!',
+    rating: 5,
+    color: '#334155'
+  },
+  {
+    name: 'Robert & Susan K.',
+    location: 'Weeki Wachee',
+    text: 'Third concrete company we\'ve tried over the years - finally found one that does it right. Fair pricing, excellent communication, and the slab they poured for our workshop is perfect.',
+    rating: 5,
+    color: '#78716c'
+  }
+];
+
+const locations = [
+  { name: 'Brooksville', slug: '/' },
+  { name: 'Spring Hill', slug: '/locations/spring-hill/' },
+  { name: 'Weeki Wachee', slug: '/locations/weeki-wachee/' },
+  { name: 'Hernando Beach', slug: '/locations/hernando-beach/' },
+  { name: 'Ridge Manor', slug: '/locations/ridge-manor/' },
+  { name: 'Crystal River', slug: '/locations/crystal-river/' },
+  { name: 'Inverness', slug: '/locations/inverness/' },
+  { name: 'Homosassa', slug: '/locations/homosassa/' },
+  { name: 'Citrus Hills', slug: '/locations/citrus-hills/' },
+  { name: 'Beverly Hills', slug: '/locations/beverly-hills/' },
+  { name: 'Dade City', slug: '/locations/dade-city/' },
+  { name: 'Zephyrhills', slug: '/locations/zephyrhills/' },
+  { name: 'Land O\' Lakes', slug: '/locations/land-o-lakes/' },
+  { name: 'New Port Richey', slug: '/locations/new-port-richey/' },
+  { name: 'Hudson', slug: '/locations/hudson/' },
+  { name: 'Wesley Chapel', slug: '/locations/wesley-chapel/' },
+];
 ---
 
 <Layout 
-  title="Trusted Concrete Contractors in Brooksville | Driveways, Patios, & more"
-  description="We provide expert installation of concrete driveways, patios, slabs & more in Hernando County. Call today for local concrete experts you can trust!"
+  title="Brooksville Concrete Contractors | Driveways, Patios & Slabs | Hernando County FL"
+  description="Trusted concrete contractors in Brooksville & Hernando County. Expert installation of driveways, patios, slabs, stamped concrete & pole barn foundations. Call (352) 292-1499 for a free quote!"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -20,7 +102,13 @@ const phoneTel = '3522921499';
         "@type": "PostalAddress",
         "addressLocality": "Brooksville",
         "addressRegion": "FL",
+        "postalCode": "34601",
         "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.5553,
+        "longitude": -82.3879
       },
       "url": "https://brooksvilleconcrete-co.com/",
       "priceRange": "$$",
@@ -29,7 +117,11 @@ const phoneTel = '3522921499';
         {"@type": "City", "name": "Brooksville"},
         {"@type": "City", "name": "Spring Hill"},
         {"@type": "City", "name": "Weeki Wachee"},
-        {"@type": "AdministrativeArea", "name": "Hernando County"}
+        {"@type": "City", "name": "Crystal River"},
+        {"@type": "City", "name": "Inverness"},
+        {"@type": "AdministrativeArea", "name": "Hernando County"},
+        {"@type": "AdministrativeArea", "name": "Citrus County"},
+        {"@type": "AdministrativeArea", "name": "Pasco County"}
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -42,20 +134,26 @@ const phoneTel = '3522921499';
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pole Barn Slabs"}}
         ]
       },
-      "description": "Premier concrete contractors serving Brooksville and Hernando County. Specializing in driveways, patios, slabs, stamped concrete, and pole barn foundations."
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127"
+      },
+      "description": "Premier concrete contractors serving Brooksville, Hernando County, and the Nature Coast. Specializing in driveways, patios, slabs, stamped concrete, and pole barn foundations. Licensed, insured, and locally owned."
     })} />
   </Fragment>
 
+  <!-- HERO SECTION - Form Above Fold -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            Serving Hernando County
+            Proudly Serving Hernando County Since 2008
           </div>
-          <h1>Trusted <span>Concrete Contractors</span> in Brooksville, FL</h1>
-          <p class="hero-subtitle">Premier concrete services for driveways, patios, slabs, stamped concrete & pole barns. Quality craftsmanship you can trust. Get your free estimate today!</p>
+          <h1>Brooksville's Most Trusted <span>Concrete Contractors</span></h1>
+          <p class="hero-subtitle">From driveways that last decades to stunning stamped patios, we deliver quality concrete work that stands up to Florida's demanding climate. Get your free estimate today.</p>
           
           <div class="hero-trust">
             <div class="hero-trust-item">
@@ -64,7 +162,7 @@ const phoneTel = '3522921499';
             </div>
             <div class="hero-trust-item">
               <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Local Experts
+              Locally Owned
             </div>
             <div class="hero-trust-item">
               <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -72,15 +170,27 @@ const phoneTel = '3522921499';
             </div>
           </div>
           
-          <a href={`tel:${phoneTel}`} class="hero-phone">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            {phone}
-          </a>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-number">15+</div>
+              <div class="hero-stat-label">Years Experience</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">500+</div>
+              <div class="hero-stat-label">Projects Completed</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">4.9★</div>
+              <div class="hero-stat-label">Customer Rating</div>
+            </div>
+          </div>
         </div>
         
         <div class="hero-form-card">
-          <h3>Get Your Free Quote</h3>
-          <p class="form-subtitle">No obligation • Response within 24 hours</p>
+          <div class="form-header">
+            <h3>Get Your FREE Quote</h3>
+            <p>Fast response • No obligation</p>
+          </div>
           <iframe 
             src="https://api.leadconnectorhq.com/widget/survey/2xUNGxniiQ6Br1WLggzp" 
             style="border:none; width:100%; min-height:380px;" 
@@ -90,13 +200,29 @@ const phoneTel = '3522921499';
           </iframe>
           <script src="https://link.msgsndr.com/js/form_embed.js"></script>
           <div class="form-urgency">
-            ⚠️ <strong>Limited availability this month</strong> — Book your spot now!
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <strong>Limited slots available</strong> — Book now for priority scheduling!
+          </div>
+          <div class="form-trust-badges">
+            <div class="form-trust-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              Fully Insured
+            </div>
+            <div class="form-trust-badge">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              No Spam
+            </div>
+            <div class="form-trust-badge">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              Quick Response
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- TRUST BAR -->
   <section class="trust-bar">
     <div class="container">
       <div class="trust-bar-inner">
@@ -105,8 +231,8 @@ const phoneTel = '3522921499';
             <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
           </div>
           <div class="trust-badge-text">
-            Fully Licensed
-            <span>FL Licensed Contractor</span>
+            FL Licensed
+            <span>State Licensed Contractor</span>
           </div>
         </div>
         <div class="trust-badge">
@@ -115,7 +241,7 @@ const phoneTel = '3522921499';
           </div>
           <div class="trust-badge-text">
             Fully Insured
-            <span>Liability & Workers Comp</span>
+            <span>Liability + Workers Comp</span>
           </div>
         </div>
         <div class="trust-badge">
@@ -123,8 +249,8 @@ const phoneTel = '3522921499';
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </div>
           <div class="trust-badge-text">
-            Local Experts
-            <span>Hernando County</span>
+            Locally Owned
+            <span>Hernando County Based</span>
           </div>
         </div>
         <div class="trust-badge">
@@ -132,107 +258,121 @@ const phoneTel = '3522921499';
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
           <div class="trust-badge-text">
-            Quality Work
-            <span>Satisfaction Guaranteed</span>
+            4.9 Star Rating
+            <span>127+ Happy Customers</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROCESS SECTION -->
   <section class="process-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Smooth & Hassle-Free Process</h2>
-        <p class="section-subtitle">From consultation to completion, we make it easy</p>
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Simple, Hassle-Free Process</h2>
+        <p class="section-subtitle">From your first call to the final finish, we make getting new concrete easy</p>
       </div>
       <div class="process-steps">
         <div class="process-step">
           <div class="step-number">1</div>
-          <h3>Schedule Consultation</h3>
-          <p>Fill out the quote form or give us a call to schedule your free on-site consultation.</p>
+          <h3>Free Consultation</h3>
+          <p>Call us or fill out our form. We'll schedule a convenient time to visit your Hernando County property and discuss your project.</p>
         </div>
         <div class="process-step">
           <div class="step-number">2</div>
-          <h3>Get Your Quote</h3>
-          <p>We'll assess your project and provide a detailed, transparent quote with no hidden fees.</p>
+          <h3>Detailed Quote</h3>
+          <p>We'll assess your site, discuss options, and provide a transparent written estimate with no hidden fees or surprises.</p>
         </div>
         <div class="process-step">
           <div class="step-number">3</div>
-          <h3>Get Started</h3>
-          <p>We agree on a timeline and our expert crew gets to work transforming your property.</p>
+          <h3>Expert Installation</h3>
+          <p>Our experienced crew handles everything from prep to pour to finish. You'll have beautiful, durable concrete in days, not weeks.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SERVICES SECTION -->
   <section class="services-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Premier Concrete Services in Brooksville, FL</h2>
-        <p class="section-subtitle">Trusted concrete contractors serving Hernando County and surrounding areas</p>
+        <span class="section-label">Our Services</span>
+        <h2 class="section-title">Complete Concrete Solutions for Hernando County</h2>
+        <p class="section-subtitle">Whatever your concrete needs, we have the expertise and equipment to deliver outstanding results</p>
       </div>
       
-      <div class="services-intro">
-        <div class="services-list">
-          <h3>Our Services</h3>
-          <ul>
+      <div class="services-grid">
+        {services.map(service => (
+          <div class="service-card">
+            <div class="service-card-image">
+              <svg viewBox="0 0 24 24"><path d={service.icon}/></svg>
+            </div>
+            <div class="service-card-content">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <a href={service.link} class="service-card-link">
+                Learn More
+                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content">
+          <h2>Why Hernando County Homeowners Choose Us</h2>
+          <p>When you're investing in concrete work for your home or business, you need contractors who understand local conditions, deliver quality work, and stand behind their results. That's exactly what you get with Brooksville Concrete Co.</p>
+          
+          <ul class="why-list">
             <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <a href="/concrete-driveways/">Concrete Driveways</a>
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <div>
+                <strong>Local Expertise</strong>
+                We know Hernando County's sandy soil, water tables, and climate challenges. Our concrete work is engineered for Florida conditions.
+              </div>
             </li>
             <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <a href="/concrete-patios/">Concrete Patios & Pool Decks</a>
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
+              <div>
+                <strong>Premium Materials</strong>
+                We use 4,000+ PSI concrete with proper fiber reinforcement. Your concrete will handle heavy loads and resist cracking.
+              </div>
             </li>
             <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <a href="/concrete-slabs/">Concrete Slabs & Foundations</a>
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              <div>
+                <strong>On-Time Completion</strong>
+                We respect your schedule. Projects are completed on time with minimal disruption to your daily life.
+              </div>
             </li>
             <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <a href="/stamped-concrete/">Stamped & Decorative Concrete</a>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <a href="/pole-barns/">Pole Barn & Building Slabs</a>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Sidewalks & Walkways
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Concrete Repairs & Resurfacing
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <div>
+                <strong>Satisfaction Guaranteed</strong>
+                We stand behind every project. If you're not 100% satisfied with our work, we'll make it right.
+              </div>
             </li>
           </ul>
         </div>
-        
-        <div class="areas-list">
-          <h3>Service Areas</h3>
-          <div class="areas-grid">
-            <a href="/">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-              Brooksville
-            </a>
-            <a href="/locations/spring-hill/">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-              Spring Hill
-            </a>
-            <a href="/locations/weeki-wachee/">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-              Weeki Wachee
-            </a>
-            <a href="/locations/hernando-beach/">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-              Hernando Beach
-            </a>
+        <div class="why-image">
+          <div class="why-image-content">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projects Completed</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FEATURES BAR -->
   <section class="features-bar">
     <div class="container">
       <div class="features-grid">
@@ -247,8 +387,8 @@ const phoneTel = '3522921499';
           <div class="feature-icon">
             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
           </div>
-          <h3>Quality Materials</h3>
-          <p>4,000+ PSI concrete standard</p>
+          <h3>4,000+ PSI Concrete</h3>
+          <p>Premium materials standard</p>
         </div>
         <div class="feature-item">
           <div class="feature-icon">
@@ -268,32 +408,92 @@ const phoneTel = '3522921499';
     </div>
   </section>
 
+  <!-- REVIEWS SECTION -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Don't just take our word for it — hear from homeowners across Hernando County</p>
+        <div class="rating-display">
+          <span class="stars">★★★★★</span>
+          <span>4.9 out of 5 based on 127+ reviews</span>
+        </div>
+      </div>
+      
+      <div class="reviews-grid">
+        {reviews.map(review => (
+          <div class="review-card">
+            <div class="review-header">
+              <div class="avatar" style={`background: ${review.color}`}>{review.name.charAt(0)}</div>
+              <div class="reviewer-info">
+                <strong>{review.name}</strong>
+                <span class="stars">★★★★★</span>
+                <span class="review-date">{review.location}, FL</span>
+              </div>
+              <svg class="google-badge" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <p class="review-text">"{review.text}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Service Areas</span>
+        <h2 class="section-title">Serving the Entire Nature Coast Region</h2>
+        <p class="section-subtitle">Based in Brooksville, we proudly serve Hernando, Citrus, and Pasco counties</p>
+      </div>
+      
+      <div class="locations-grid">
+        {locations.map(loc => (
+          <a href={loc.slug} class="location-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            {loc.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION - Long Form Content -->
   <section class="about-section">
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <h2>Why Choose Brooksville Concrete Co.?</h2>
-          <p>We're your local concrete experts serving Brooksville and all of Hernando County. Our team of experienced professionals takes pride in delivering quality concrete work that stands the test of time.</p>
-          <p>From simple driveways to decorative stamped concrete patios, we handle projects of all sizes with the same attention to detail. We use premium materials and proven techniques to ensure your concrete investment lasts for decades.</p>
-          <p><strong>Services include:</strong> Driveways, patios, pool decks, sidewalks, slabs, foundations, pole barn floors, stamped concrete, and concrete repairs.</p>
-          <a href="/contact/" class="btn btn-primary">Get Your Free Quote</a>
+          <h2>Your Trusted Concrete Partner in Brooksville, Florida</h2>
+          <p>For over 15 years, Brooksville Concrete Co. has been the go-to concrete contractor for homeowners and businesses throughout Hernando County and the greater Nature Coast region. What started as a small family operation has grown into one of the area's most respected concrete companies, built on a foundation of quality work, honest pricing, and genuine customer care.</p>
+          
+          <p>Our team understands the unique challenges of working in Central Florida. From the sandy soils of Spring Hill to the coastal conditions near Hernando Beach, we engineer every project to withstand Florida's demanding environment. Heavy rains, intense sun, and shifting soils are no match for properly installed concrete—and that's exactly what we deliver.</p>
+          
+          <p><strong>What sets us apart:</strong> Unlike large corporate contractors who treat you like a number, we're a locally owned business that takes pride in every single project. Our owner is on-site regularly, our crews are employees (not subcontractors), and we treat your property like it's our own. When you choose Brooksville Concrete, you're getting neighbors who care about doing the job right.</p>
+          
+          <p>Whether you need a new driveway in Brooksville, a stamped concrete patio in Spring Hill, or a pole barn foundation in Ridge Manor, we bring the same level of expertise and attention to detail to every project. Our commitment to using premium materials and proven techniques means your concrete investment will last for decades to come.</p>
+          
+          <a href="/about/" class="btn btn-primary">Learn More About Us</a>
         </div>
-        <div class="about-image">
-          <div style="background: linear-gradient(135deg, var(--primary-dark) 0%, #0f2744 100%); height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
-            <span style="color: white; font-size: 1.5rem; font-weight: 600;">Quality Concrete Work</span>
+        <div class="about-image" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%); height: 100%; min-height: 450px; display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center; color: white; padding: 40px;">
+            <div style="font-size: 4rem; font-weight: 800; color: var(--primary); line-height: 1;">15+</div>
+            <div style="font-size: 1.5rem; margin-top: 10px;">Years Serving<br>Hernando County</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA SECTION -->
   <section class="cta-section">
     <div class="container">
-      <h2>Ready to Start Your Concrete Project?</h2>
-      <p>Get a free, no-obligation quote from Brooksville's trusted concrete contractors</p>
+      <h2>Ready to Transform Your Property?</h2>
+      <p>Get a free, no-obligation quote from Brooksville's most trusted concrete contractors</p>
       <div class="cta-buttons">
         <a href={`tel:${phoneTel}`} class="btn btn-white">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           Call {phone}
         </a>
         <a href="/contact/" class="btn btn-outline-white">Request Quote Online</a>

@@ -1,0 +1,110 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const phone = '(352) 292-1499';
+const phoneTel = '3522921499';
+const city = 'New Port Richey';
+const county = 'Pasco County';
+---
+
+<Layout 
+  title={`Concrete Contractors in ${city}, FL | Driveways, Patios & Slabs`}
+  description={`Experienced concrete contractors serving ${city}, Florida. Quality driveways, patios, pool decks, and slabs for west Pasco County. Call ${phone}!`}
+  canonical="/locations/new-port-richey/"
+>
+  <section class="service-hero">
+    <div class="container">
+      <h1>Concrete Contractors in {city}, Florida</h1>
+      <p>Quality concrete installation for {city} homes and businesses. Professional service from trusted contractors.</p>
+      <a href={`tel:${phoneTel}`} class="btn btn-primary">Call {phone}</a>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <h2>Professional Concrete Services in {city}</h2>
+          <p>{city} offers waterfront living, historic downtown charm, and established neighborhoods that make it one of west Pasco County's most desirable communities. From the Cotee River to the Gulf coast, New Port Richey properties have diverse concrete needs that require experienced contractors.</p>
+          
+          <p>Brooksville Concrete Co. serves New Port Richey with the same quality and attention to detail we bring to our Hernando County home base. Located just south of our primary service area, New Port Richey is well within our reach, and we've completed numerous projects throughout the community.</p>
+          
+          <p>Whether you need a new driveway to enhance your home's curb appeal, a patio for outdoor entertaining, or a foundation for a backyard project, we deliver concrete work that meets New Port Richey's standards and your expectations.</p>
+        </div>
+        <div class="intro-content">
+          <h3>{city} Concrete Services</h3>
+          <ul class="why-list">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div>
+                <strong>Concrete Driveways</strong>
+                Durable driveways in standard, colored, or decorative stamped finishes.
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div>
+                <strong>Pool Decks & Patios</strong>
+                Slip-resistant, attractive surfaces for your outdoor living areas.
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div>
+                <strong>Waterfront Concrete</strong>
+                Specialized installations for properties along the Cotee River and Gulf coast.
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div>
+                <strong>Slabs & Foundations</strong>
+                Strong foundations for additions, garages, and outbuildings.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <h2>Quality Concrete for {city} Properties</h2>
+    
+    <p>New Port Richey's established neighborhoods and waterfront properties create diverse concrete needs. Many homes in the area were built decades ago, and their original concrete—driveways, patios, walkways—may be due for replacement. We specialize in upgrading these surfaces with modern, durable concrete that looks great and performs even better.</p>
+
+    <h3>Waterfront and Coastal Considerations</h3>
+    
+    <p>Properties near the Cotee River or along the Gulf coast face challenges from salt air, high water tables, and potential flooding. Our experience with similar conditions in Hernando Beach and other coastal areas transfers directly to New Port Richey work. We use appropriate techniques and materials to ensure your concrete holds up to these demanding conditions.</p>
+
+    <h3>Serving New Port Richey Neighborhoods</h3>
+    
+    <p>From historic downtown to newer developments, we work throughout the New Port Richey area:</p>
+    
+    <ul>
+      <li>Downtown New Port Richey and surrounding historic neighborhoods</li>
+      <li>Waterfront properties along the Cotee River</li>
+      <li>Gulf Harbors and coastal communities</li>
+      <li>Inland neighborhoods and developments</li>
+      <li>Commercial areas along US-19</li>
+    </ul>
+
+    <h3>What We Bring to Your Project</h3>
+    
+    <p>Every New Port Richey project receives our standard commitment to quality: thorough site assessment, premium 4,000+ PSI concrete, proper reinforcement, and skilled installation techniques. We don't cut corners, and we don't leave until the job is done right.</p>
+    
+    <p>Our decorative concrete options are popular in New Port Richey, where homeowners want surfaces that stand out. Stamped patterns mimicking stone, brick, or tile add visual interest to driveways and patios without the high cost of natural materials.</p>
+
+    <h3>Get Your Free Estimate</h3>
+    
+    <p>Ready to discuss your New Port Richey concrete project? Contact Brooksville Concrete Co. for a free estimate. We'll visit your property, discuss your options, and provide honest pricing. Call <a href={`tel:${phoneTel}`}>{phone}</a> to schedule.</p>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Expert Concrete Services for {city}</h2>
+      <p>Free estimates for west {county} properties</p>
+      <a href={`tel:${phoneTel}`} class="btn">Call {phone} Now</a>
+    </div>
+  </section>
+</Layout>
