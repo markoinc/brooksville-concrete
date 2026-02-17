@@ -1,0 +1,139 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical = Astro.url.pathname } = Astro.props;
+const siteUrl = 'https://brooksvilleconcrete-co.com';
+const phone = '(352) 292-1499';
+const phoneTel = '3522921499';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={`${siteUrl}${canonical}`}>
+  
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={`${siteUrl}${canonical}`}>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <slot name="head" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-text">Brooksville Concrete Co.</span>
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/concrete-driveways/">Driveways</a></li>
+            <li><a href="/concrete-patios/">Patios</a></li>
+            <li><a href="/concrete-slabs/">Slabs</a></li>
+            <li><a href="/stamped-concrete/">Stamped</a></li>
+            <li><a href="/pole-barns/">Pole Barns</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <a href={`tel:${phoneTel}`} class="header-phone">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          {phone}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Brooksville Concrete Co.</h4>
+        <p style="color: rgba(255,255,255,0.75); margin-bottom: 15px;">Your trusted local concrete contractors serving Brooksville and Hernando County, FL.</p>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <a href={`tel:${phoneTel}`}>{phone}</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Brooksville, FL</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/concrete-driveways/">Concrete Driveways</a></li>
+          <li><a href="/concrete-patios/">Concrete Patios</a></li>
+          <li><a href="/concrete-slabs/">Concrete Slabs</a></li>
+          <li><a href="/stamped-concrete/">Stamped Concrete</a></li>
+          <li><a href="/pole-barns/">Pole Barn Slabs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/">Brooksville</a></li>
+          <li><a href="/locations/spring-hill/">Spring Hill</a></li>
+          <li><a href="/locations/weeki-wachee/">Weeki Wachee</a></li>
+          <li><a href="/locations/hernando-beach/">Hernando Beach</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Brooksville Concrete Co. All rights reserved.</p>
+      <div>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta">
+    <a href={`tel:${phoneTel}`}>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now: {phone}
+    </a>
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const headerRight = document.querySelector('.header-right');
+    if (toggle && headerRight) {
+      toggle.addEventListener('click', () => {
+        headerRight.classList.toggle('active');
+      });
+    }
+  </script>
+
+  <style is:global>
+    @import '../styles/global.css';
+  </style>
+</body>
+</html>

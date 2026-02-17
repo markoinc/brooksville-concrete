@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+const phone = '(352) 292-1499';
+const phoneTel = '3522921499';
+---
+
+<Layout 
+  title="About Us | Brooksville Concrete Co. - Local Concrete Contractors"
+  description="Learn about Brooksville Concrete Co. - your trusted local concrete contractors serving Brooksville and Hernando County, FL. Licensed, insured, and committed to quality."
+>
+  <section class="service-hero">
+    <div class="container">
+      <h1>About Brooksville Concrete Co.</h1>
+      <p>Your trusted local concrete contractors in Hernando County</p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <h2>Local Concrete Experts You Can Trust</h2>
+          <p>Brooksville Concrete Co. is a locally owned and operated concrete contracting company serving Brooksville and all of Hernando County, Florida. We specialize in residential concrete services including driveways, patios, slabs, foundations, pole barn floors, and decorative stamped concrete.</p>
+          <p>Our team of experienced professionals takes pride in delivering quality concrete work that stands the test of time. We understand Florida's unique soil conditions and climate challenges, and we build every project to last.</p>
+          
+          <h3>Why Choose Us?</h3>
+          <ul class="why-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="var(--primary-orange)" style="width:24px;height:24px;flex-shrink:0;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><strong>Licensed & Insured</strong> - Fully licensed Florida contractor with liability and workers' compensation insurance</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="var(--primary-orange)" style="width:24px;height:24px;flex-shrink:0;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><strong>Local Knowledge</strong> - We understand Hernando County's soil conditions and building requirements</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="var(--primary-orange)" style="width:24px;height:24px;flex-shrink:0;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><strong>Quality Materials</strong> - We use 4,000+ PSI concrete and proper reinforcement on every job</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="var(--primary-orange)" style="width:24px;height:24px;flex-shrink:0;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><strong>Transparent Pricing</strong> - Detailed quotes with no hidden fees or surprise charges</div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="var(--primary-orange)" style="width:24px;height:24px;flex-shrink:0;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><strong>Satisfaction Guaranteed</strong> - We stand behind our work and ensure you're happy with the results</div>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h3>Get Your Free Quote</h3>
+          <iframe src="https://api.leadconnectorhq.com/widget/survey/2xUNGxniiQ6Br1WLggzp" style="border:none; width:100%; min-height:500px;" scrolling="no" title="Free Quote Form"></iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Contact us today for a free, no-obligation estimate</p>
+      <a href={`tel:${phoneTel}`} class="btn">Call {phone}</a>
+    </div>
+  </section>
+</Layout>

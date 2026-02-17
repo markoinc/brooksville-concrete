@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+const phone = '(352) 292-1499';
+const phoneTel = '3522921499';
+---
+
+<Layout 
+  title="Thank You | Brooksville Concrete Co."
+  description="Thank you for contacting Brooksville Concrete Co. We'll be in touch shortly."
+>
+  <section class="thankyou-section">
+    <div class="container">
+      <div class="thankyou-content">
+        <svg viewBox="0 0 24 24" fill="#22c55e" style="width:80px;height:80px;margin-bottom:20px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <h1>Thank You!</h1>
+        <p>Your request has been received. We'll be in touch within 24 hours to discuss your concrete project.</p>
+        <p>Need to talk sooner? Give us a call:</p>
+        <a href={`tel:${phoneTel}`} class="btn btn-primary" style="margin-top: 20px;">Call {phone}</a>
+        <p style="margin-top: 30px;"><a href="/">← Back to Home</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
