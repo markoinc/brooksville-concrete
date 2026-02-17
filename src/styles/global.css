@@ -1,18 +1,19 @@
 /* ===============================
    Brooksville Concrete Co.
-   UNIQUE DESIGN - Slate & Amber Industrial
+   UNIQUE DESIGN - Sunset Red-Orange Theme
+   Based on original logo colors
    =============================== */
 
 :root {
-  /* UNIQUE COLOR PALETTE - Industrial Concrete Aesthetic */
-  --primary: #d97706;           /* Warm Amber */
-  --primary-dark: #b45309;      /* Deep Amber */
-  --primary-light: #fbbf24;     /* Light Gold */
-  --secondary: #334155;         /* Slate Gray */
-  --secondary-dark: #1e293b;    /* Dark Slate */
-  --secondary-light: #475569;   /* Light Slate */
-  --accent: #78716c;            /* Warm Stone */
-  --accent-light: #a8a29e;      /* Light Stone */
+  /* BRAND COLOR PALETTE - Sunset Theme (from original logo) */
+  --primary: #ea2c35;           /* Sunset Red */
+  --primary-dark: #c41e26;      /* Deep Red */
+  --primary-light: #f06331;     /* Sunset Orange */
+  --secondary: #1a1a1a;         /* Near Black (silhouettes) */
+  --secondary-dark: #0d0d0d;    /* True Black */
+  --secondary-light: #333333;   /* Dark Gray */
+  --accent: #f07b30;            /* Warm Orange */
+  --accent-light: #f5a060;      /* Light Orange */
   
   --text-dark: #1e293b;
   --text-body: #475569;
@@ -121,6 +122,18 @@ header {
   gap: 10px;
 }
 
+.logo-image {
+  height: 55px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    height: 45px;
+  }
+}
+
+/* Keep fallback styles for text logo if needed */
 .logo-icon {
   width: 45px;
   height: 45px;
